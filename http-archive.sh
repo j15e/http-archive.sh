@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Get mirror
-wget --mirror --page-requisites --html-extension --convert-links -x -e robots=off -P . $1
+wget --mirror --page-requisites --html-extension --convert-links --no-verbose -x -e robots=off -P . $1
 
 # Remove wget index.html to keep original folders index urls
 LC_CTYPE=C LANG=C find . -name \*.html | xargs sed -i.bak "s/index\.html//g"
