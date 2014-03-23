@@ -8,4 +8,5 @@ LC_CTYPE=C LANG=C find . -name \*.html | xargs sed -i.bak "s/index\.html//g"
 
 # Publish to Amazon S3 website enabled bucket
 s3cmd mb s3://$2
-s3cmd put --acl-public --recursive $1/  s3://$2
+s3cmd ws-create s3://2014.webaquebec.org --ws-index=index.html
+s3cmd put --acl-public --recursive $1/ s3://$2
